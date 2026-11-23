@@ -23,6 +23,7 @@ import {
   Menu,
   X,
   ExternalLink,
+  MessageSquare,
 } from "lucide-react";
 
 interface SidebarProps {
@@ -46,6 +47,7 @@ export default function AdminSidebar({ mobileOpen, setMobileOpen }: SidebarProps
 
   const navItems = [
     { title: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
+    { title: "Website Leads & Enquiries", href: "/admin/enquiries", icon: MessageSquare },
     { title: "Clients & Entities", href: "/admin/clients", icon: Users },
     {
       title: "GST Management",

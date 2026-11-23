@@ -18,6 +18,7 @@ import {
   UploadCloud,
   CheckCircle2,
   Calendar,
+  MessageSquare,
 } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -34,6 +35,8 @@ export default async function DashboardPage() {
     upcomingTasks,
     recentAuditLogs,
     recentPayments,
+    recentEnquiries,
+    newEnquiriesCount,
   ] = await Promise.all([
     db.client.count({ where: { status: "ACTIVE" } }),
     db.gstRegistration.count({ where: { status: "ACTIVE" } }),
@@ -57,6 +60,11 @@ export default async function DashboardPage() {
       take: 4,
       include: { invoice: { include: { client: true } } },
     }),
+    db.enquiry.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 4,
+    }),
+    db.enquiry.count({ where: { status: "NEW" } }),
   ]);
 
   // Outstanding calculation
@@ -272,6 +280,71 @@ export default async function DashboardPage() {
                 />
               </div>
             </div>
+          </div>
+
+          {/* Website Leads & Inbound Requirements */}
+          <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-4">
+            <div className="flex justify-between items-center border-b border-slate-100 pb-3">
+              <div className="flex items-center gap-2">
+                <MessageSquare className="w-5 h-5 text-[#2563EB]" />
+                <div>
+                  <h3 className="font-bold text-sm text-[#17365D]">Recent Website Enquiries & Leads</h3>
+                  <p className="text-xs text-slate-500">Inbound consultation requests from prospective clients</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                {newEnquiriesCount > 0 && (
+                  <span className="text-[11px] font-bold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">
+                    {newEnquiriesCount} New
+                  </span>
+                )}
+                <Link
+                  href="/admin/enquiries"
+                  className="text-xs font-semibold text-[#2563EB] hover:underline flex items-center gap-1"
+                >
+                  View All Leads <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            {recentEnquiries.length === 0 ? (
+              <p className="text-xs text-slate-400 py-2">No website enquiries received yet.</p>
+            ) : (
+              <div className="divide-y divide-slate-100">
+                {recentEnquiries.map((enq) => (
+                  <div key={enq.id} className="py-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-bold text-slate-800">{enq.name}</span>
+                        <span className="text-[10px] font-semibold bg-slate-100 text-slate-600 px-2 py-0.5 rounded">
+                          {enq.serviceName}
+                        </span>
+                        <span
+                          className={`text-[9px] font-bold px-1.5 py-0.5 rounded uppercase ${
+                            enq.status === "NEW" ? "bg-blue-100 text-blue-700" : "bg-slate-100 text-slate-600"
+                          }`}
+                        >
+                          {enq.status}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-slate-600 line-clamp-1 italic">
+                        &quot;{enq.message}&quot;
+                      </p>
+                      <p className="text-[10px] text-slate-400">
+                        Phone: {enq.mobile} • Email: {enq.email} • Received: {formatDate(enq.createdAt)}
+                      </p>
+                    </div>
+
+                    <Link
+                      href="/admin/enquiries"
+                      className="text-xs font-semibold px-2.5 py-1 bg-slate-100 hover:bg-[#2563EB] hover:text-white rounded text-slate-700 transition-colors shrink-0"
+                    >
+                      Respond →
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Pending Tasks & Deadlines */}
