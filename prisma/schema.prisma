@@ -1,0 +1,511 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// 1. AUTHENTICATION & SECURITY
+model Admin {
+  id                  String     @id @default(cuid())
+  email               String     @unique
+  passwordHash        String
+  fullName            String
+  membershipNo        String?
+  role                String     @default("CHARTERED_ACCOUNTANT")
+  twoFactorSecret     String?
+  twoFactorEnabled    Boolean    @default(false)
+  failedLoginAttempts Int        @default(0)
+  lockoutUntil        DateTime?
+  lastLoginAt         DateTime?
+  createdAt           DateTime   @default(now())
+  updatedAt           DateTime   @updatedAt
+
+  sessions            Session[]
+  auditLogs           AuditLog[]
+  tasks               Task[]
+  assignedClients     Client[]   @relation("AssignedCA")
+}
+
+model Session {
+  id           String    @id @default(cuid())
+  sessionToken String    @unique
+  adminId      String
+  admin        Admin     @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  ipAddress    String?
+  userAgent    String?
+  expiresAt    DateTime
+  createdAt    DateTime  @default(now())
+}
+
+model AuditLog {
+  id          String    @id @default(cuid())
+  adminId     String?
+  admin       Admin?    @relation(fields: [adminId], references: [id], onDelete: SetNull)
+  action      String
+  module      String
+  recordId    String?
+  ipAddress   String?
+  userAgent   String?
+  diff        String?
+  createdAt   DateTime  @default(now())
+}
+
+// 2. CLIENT & BUSINESS MANAGEMENT
+model Client {
+  id              String         @id @default(cuid())
+  clientCode      String         @unique
+  name            String
+  clientType      String         // INDIVIDUAL, HUF, PROPRIETORSHIP, PARTNERSHIP_FIRM, LLP, PRIVATE_LIMITED
+  pan             String
+  panNormalized   String         @unique
+  mobile          String
+  email           String
+  addressLine1    String
+  addressLine2    String?
+  city            String
+  state           String
+  pincode         String
+  notes           String?
+  status          String         @default("ACTIVE") // ACTIVE, INACTIVE, PROSPECTIVE
+  assignedCAId    String?
+  assignedCA      Admin?         @relation("AssignedCA", fields: [assignedCAId], references: [id], onDelete: SetNull)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  businesses      Business[]
+  itrProfiles     ItrProfile[]
+  documents       Document[]
+  tasks           Task[]
+  invoices        Invoice[]
+  auditRecords    AuditRecord[]
+}
+
+model Business {
+  id               String            @id @default(cuid())
+  clientId         String
+  client           Client            @relation(fields: [clientId], references: [id], onDelete: Restrict)
+  tradeName        String
+  legalName        String
+  constitution     String
+  cin              String?
+  llpin            String?
+  incorporationDate DateTime?
+  natureOfBusiness String?
+  registeredState  String
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  gstRegistrations GstRegistration[]
+  accounts         Account[]
+  vouchers         Voucher[]
+  rocRecords       RocRecord[]
+}
+
+// 3. GST MANAGEMENT
+model GstRegistration {
+  id               String             @id @default(cuid())
+  businessId       String
+  business         Business           @relation(fields: [businessId], references: [id], onDelete: Restrict)
+  gstin            String             @unique
+  stateCode        String
+  tradeName        String
+  registrationType String             @default("REGULAR") // REGULAR, COMPOSITION
+  status           String             @default("ACTIVE")
+  arn              String?
+  registrationDate DateTime?
+  certificateUrl   String?
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+
+  salesEntries     GstSalesEntry[]
+  purchaseEntries  GstPurchaseEntry[]
+  returns          GstReturn[]
+}
+
+model GstSalesEntry {
+  id                String          @id @default(cuid())
+  gstRegistrationId String
+  gstRegistration   GstRegistration @relation(fields: [gstRegistrationId], references: [id], onDelete: Restrict)
+  invoiceNumber     String
+  invoiceDate       DateTime
+  invoiceType       String          @default("B2B") // B2B, B2C_LARGE, B2C_SMALL
+  customerName      String
+  customerGstin     String?
+  placeOfSupply     String
+  supplyType        String          // INTRA_STATE, INTER_STATE
+  hsnCode           String?
+  taxableAmount     Float
+  gstRate           Float
+  cgstAmount        Float           @default(0)
+  sgstAmount        Float           @default(0)
+  igstAmount        Float           @default(0)
+  cessAmount        Float           @default(0)
+  totalAmount       Float
+  isRcm             Boolean         @default(false)
+  gstr1Period       String
+  isFiledGstr1      Boolean         @default(false)
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+}
+
+model GstPurchaseEntry {
+  id                String          @id @default(cuid())
+  gstRegistrationId String
+  gstRegistration   GstRegistration @relation(fields: [gstRegistrationId], references: [id], onDelete: Restrict)
+  supplierName      String
+  supplierGstin     String
+  invoiceNumber     String
+  invoiceDate       DateTime
+  placeOfSupply     String
+  supplyType        String
+  taxableAmount     Float
+  gstRate           Float
+  cgstAmount        Float           @default(0)
+  sgstAmount        Float           @default(0)
+  igstAmount        Float           @default(0)
+  cessAmount        Float           @default(0)
+  totalAmount       Float
+  isRcm             Boolean         @default(false)
+  itcEligibility    String          @default("INPUTS") // INPUTS, INPUT_SERVICES, CAPITAL_GOODS, INELIGIBLE_17_5
+  gstr2bPeriod      String
+  isMatched2B       Boolean         @default(false)
+  matchStatus       String?
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+}
+
+model GstReturn {
+  id                String          @id @default(cuid())
+  gstRegistrationId String
+  gstRegistration   GstRegistration @relation(fields: [gstRegistrationId], references: [id], onDelete: Restrict)
+  returnType        String          // GSTR_1, GSTR_3B, GSTR_9, GSTR_9C, CMP_08
+  financialYear     String          // 2025-26
+  returnPeriod      String          // 072026 / Q1
+  dueDate           DateTime
+  filingDate        DateTime?
+  arn               String?
+  status            String          @default("NOT_FILED") // NOT_FILED, VERIFIED_READY_TO_FILE, FILED
+  totalTaxLiability Float           @default(0)
+  itcClaimed        Float           @default(0)
+  taxPaidCash       Float           @default(0)
+  ackDocumentUrl    String?
+  caRemarks         String?
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+}
+
+// 4. INCOME TAX & ITR
+model ItrProfile {
+  id                   String           @id @default(cuid())
+  clientId             String
+  client               Client           @relation(fields: [clientId], references: [id], onDelete: Restrict)
+  financialYear        String
+  assessmentYear       String
+  itrForm              String           @default("ITR_1_SAHAJ") // ITR_1_SAHAJ .. ITR_7
+  chosenRegime         String           @default("NEW_REGIME_115BAC") // OLD_REGIME, NEW_REGIME_115BAC
+  residentialStatus    String           @default("RESIDENT")
+  isSeniorCitizen      Boolean          @default(false)
+  isSuperSeniorCitizen Boolean          @default(false)
+  createdAt            DateTime         @default(now())
+  updatedAt            DateTime         @updatedAt
+
+  incomeEntries        IncomeEntry[]
+  deductions           DeductionEntry[]
+  computations         TaxComputation[]
+  filings              ItrFiling[]
+}
+
+model IncomeEntry {
+  id                String     @id @default(cuid())
+  itrProfileId      String
+  itrProfile        ItrProfile @relation(fields: [itrProfileId], references: [id], onDelete: Cascade)
+  head              String     // SALARY, HOUSE_PROPERTY, BUSINESS_PROFESSION, CAPITAL_GAINS_STCG, CAPITAL_GAINS_LTCG, OTHER_SOURCES
+  description       String
+  grossAmount       Float
+  exemptions        Float      @default(0)
+  standardDeduction Float      @default(0)
+  netAmount         Float
+  metadata          String?
+  createdAt         DateTime   @default(now())
+}
+
+model DeductionEntry {
+  id                    String     @id @default(cuid())
+  itrProfileId          String
+  itrProfile            ItrProfile @relation(fields: [itrProfileId], references: [id], onDelete: Cascade)
+  section               String     // 80C, 80D, 80G, 80CCD_1B
+  description           String
+  claimedAmount         Float
+  allowedAmount         Float
+  applicableInNewRegime Boolean    @default(false)
+  createdAt             DateTime   @default(now())
+}
+
+model TaxComputation {
+  id                  String     @id @default(cuid())
+  itrProfileId        String
+  itrProfile          ItrProfile @relation(fields: [itrProfileId], references: [id], onDelete: Cascade)
+  regime              String     // OLD_REGIME, NEW_REGIME_115BAC
+  grossTotalIncome    Float
+  totalDeductions     Float
+  totalTaxableIncome  Float
+  taxOnNormalIncome   Float
+  taxOnSpecialRates   Float      @default(0)
+  rebate87A           Float      @default(0)
+  taxAfterRebate      Float
+  surcharge           Float      @default(0)
+  marginalRelief      Float      @default(0)
+  healthEducationCess Float
+  totalTaxLiability   Float
+  interest234A        Float      @default(0)
+  interest234B        Float      @default(0)
+  interest234C        Float      @default(0)
+  tdsCredit           Float      @default(0)
+  tcsCredit           Float      @default(0)
+  advanceTaxPaid      Float      @default(0)
+  selfAssessmentTax   Float      @default(0)
+  netTaxPayable       Float      @default(0)
+  refundDue           Float      @default(0)
+  isRecommendedRegime Boolean    @default(false)
+  computationPdfUrl   String?
+  createdAt           DateTime   @default(now())
+}
+
+model ItrFiling {
+  id                String     @id @default(cuid())
+  itrProfileId      String
+  itrProfile        ItrProfile @relation(fields: [itrProfileId], references: [id], onDelete: Restrict)
+  acknowledgementNo String?
+  eFilingDate       DateTime?
+  status            String     @default("PENDING_CA_VERIFICATION")
+  itrVDocumentUrl   String?
+  caApprovalDate    DateTime?
+  createdAt         DateTime   @default(now())
+}
+
+// 5. DOUBLE-ENTRY ACCOUNTING
+model Account {
+  id              String         @id @default(cuid())
+  businessId      String
+  business        Business       @relation(fields: [businessId], references: [id], onDelete: Restrict)
+  accountCode     String
+  accountName     String
+  accountType     String         // ASSET, LIABILITY, EQUITY, REVENUE, EXPENSE
+  parentAccountId String?
+  openingBalance  Float          @default(0)
+  isDebitBalance  Boolean        @default(true)
+  currentBalance  Float          @default(0)
+  isSystemAccount Boolean        @default(false)
+  createdAt       DateTime       @default(now())
+
+  entries         VoucherEntry[]
+}
+
+model Voucher {
+  id             String         @id @default(cuid())
+  businessId     String
+  business       Business       @relation(fields: [businessId], references: [id], onDelete: Restrict)
+  voucherType    String         // JOURNAL, PAYMENT, RECEIPT, CONTRA, SALES, PURCHASE, CREDIT_NOTE, DEBIT_NOTE
+  voucherNumber  String
+  voucherDate    DateTime
+  narration      String
+  status         String         @default("POSTED") // DRAFT, POSTED, CANCELLED_REVERSED
+  totalDebit     Float
+  totalCredit    Float
+  isReversalOf   String?
+  reversalReason String?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  entries        VoucherEntry[]
+}
+
+model VoucherEntry {
+  id          String   @id @default(cuid())
+  voucherId   String
+  voucher     Voucher  @relation(fields: [voucherId], references: [id], onDelete: Cascade)
+  accountId   String
+  account     Account  @relation(fields: [accountId], references: [id], onDelete: Restrict)
+  debit       Float    @default(0)
+  credit      Float    @default(0)
+  particulars String?
+}
+
+// 6. TDS & TCS
+model TdsEntry {
+  id            String    @id @default(cuid())
+  clientId      String
+  sectionCode   String    // 194C, 194J, 194I, 194H, 194Q
+  deducteePan   String
+  deducteeName  String
+  paymentDate   DateTime
+  taxableAmount Float
+  tdsRate       Float
+  tdsDeducted   Float
+  challanNumber String?
+  bsrCode       String?
+  depositDate   DateTime?
+  quarter       String
+  financialYear String
+  createdAt     DateTime  @default(now())
+}
+
+// 7. AUDIT & ROC
+model AuditRecord {
+  id             String             @id @default(cuid())
+  clientId       String
+  client         Client             @relation(fields: [clientId], references: [id], onDelete: Restrict)
+  auditType      String             // TAX_AUDIT_44AB, STATUTORY_AUDIT_MCA
+  financialYear  String
+  leadAuditor    String
+  auditStatus    String             @default("PLANNING")
+  auditReportUrl String?
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+
+  observations   AuditObservation[]
+  checklists     AuditChecklist[]
+}
+
+model AuditObservation {
+  id                 String      @id @default(cuid())
+  auditRecordId      String
+  auditRecord        AuditRecord @relation(fields: [auditRecordId], references: [id], onDelete: Cascade)
+  category           String
+  description        String
+  managementResponse String?
+  severity           String      @default("MEDIUM")
+  isResolved         Boolean     @default(false)
+  createdAt          DateTime    @default(now())
+}
+
+model AuditChecklist {
+  id            String      @id @default(cuid())
+  auditRecordId String
+  auditRecord   AuditRecord @relation(fields: [auditRecordId], references: [id], onDelete: Cascade)
+  itemText      String
+  isCompleted   Boolean     @default(false)
+  verifiedBy    String?
+  verifiedAt    DateTime?
+}
+
+model RocRecord {
+  id            String    @id @default(cuid())
+  businessId    String
+  business      Business  @relation(fields: [businessId], references: [id], onDelete: Restrict)
+  formName      String    // AOC-4, MGT-7, DIR-3_KYC
+  financialYear String
+  srnNumber     String?
+  dueDate       DateTime
+  filingDate    DateTime?
+  mcaChallanUrl String?
+  status        String    @default("PENDING")
+  createdAt     DateTime  @default(now())
+}
+
+// 8. DOCUMENTS, TASKS, BILLING & PUBLIC LEADS
+model Document {
+  id            String   @id @default(cuid())
+  clientId      String
+  client        Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  title         String
+  category      String   // GST, ITR, BALANCE_SHEET, PAN_AADHAAR, INVOICE
+  financialYear String?
+  fileUrl       String
+  fileMimeType  String
+  fileSizeBytes Int
+  createdAt     DateTime @default(now())
+}
+
+model Task {
+  id           String    @id @default(cuid())
+  title        String
+  description  String?
+  clientId     String?
+  client       Client?   @relation(fields: [clientId], references: [id], onDelete: SetNull)
+  assignedToId String?
+  assignedTo   Admin?    @relation(fields: [assignedToId], references: [id], onDelete: SetNull)
+  priority     String    @default("MEDIUM") // LOW, MEDIUM, HIGH, URGENT
+  status       String    @default("TODO")   // TODO, IN_PROGRESS, WAITING_FOR_CLIENT_DOCS, COMPLETED
+  dueDate      DateTime
+  completedAt  DateTime?
+  category     String    // GST_FILING, ITR, AUDIT, ROC_ANNUAL, BILLING
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Invoice {
+  id            String        @id @default(cuid())
+  invoiceNumber String        @unique
+  clientId      String
+  client        Client        @relation(fields: [clientId], references: [id], onDelete: Restrict)
+  invoiceDate   DateTime
+  dueDate       DateTime
+  subtotal      Float
+  cgstRate      Float         @default(9.0)
+  cgstAmount    Float
+  sgstRate      Float         @default(9.0)
+  sgstAmount    Float
+  igstRate      Float         @default(0)
+  igstAmount    Float         @default(0)
+  totalAmount   Float
+  paidAmount    Float         @default(0)
+  balanceDue    Float
+  status        String        @default("ISSUED") // DRAFT, ISSUED, PARTIALLY_PAID, PAID, OVERDUE
+  pdfUrl        String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  items         InvoiceItem[]
+  payments      Payment[]
+}
+
+model InvoiceItem {
+  id          String   @id @default(cuid())
+  invoiceId   String
+  invoice     Invoice  @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  description String
+  sacCode     String   @default("998222")
+  quantity    Int      @default(1)
+  unitPrice   Float
+  amount      Float
+}
+
+model Payment {
+  id            String   @id @default(cuid())
+  invoiceId     String
+  invoice       Invoice  @relation(fields: [invoiceId], references: [id], onDelete: Restrict)
+  paymentDate   DateTime
+  amount        Float
+  paymentMode   String   // NEFT_RTGS, UPI, CHEQUE, CASH
+  referenceNo   String?
+  receiptPdfUrl String?
+  createdAt     DateTime @default(now())
+}
+
+model Enquiry {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  mobile      String
+  serviceName String
+  message     String
+  status      String   @default("NEW") // NEW, CONTACTED, CONVERTED
+  createdAt   DateTime @default(now())
+}
+
+model Appointment {
+  id                String   @id @default(cuid())
+  name              String
+  email             String
+  mobile            String
+  preferredDate     DateTime
+  preferredTimeSlot String
+  serviceRequired   String
+  notes             String?
+  status            String   @default("SCHEDULED")
+  createdAt         DateTime @default(now())
+}
