@@ -251,7 +251,7 @@ export default function ClientProfilePage({ params }: { params: { id: string } }
                   Assigned FCA In-Charge
                 </span>
                 <p className="text-xs font-bold text-[#17365D]">
-                  {client.assignedCA?.fullName || "CA Vikramaditya Singhania"}
+                  {client.assignedCA?.fullName || "CA Gajendra Dewangan"}
                 </p>
                 <p className="text-[11px] text-slate-500">
                   ICAI M.No: {client.assignedCA?.membershipNo || "084920"}

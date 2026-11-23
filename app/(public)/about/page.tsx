@@ -10,10 +10,10 @@ export default function AboutPage() {
           Firm Credentials & Legacy
         </span>
         <h1 className="text-3xl font-extrabold text-[#17365D]">
-          About Singhania & Co., Chartered Accountants
+          About G. Dewangan & Associates, Chartered Accountants
         </h1>
         <p className="text-sm text-slate-600 max-w-3xl">
-          Founded in 1998, we are a premier Indian Chartered Accountancy practice providing corporate tax advisory, comprehensive GST filing, statutory audit, transfer pricing, and strategic accounting services.
+          We are an established Indian Chartered Accountancy practice providing corporate tax advisory, comprehensive GST filing, statutory audit, ROC compliance, and strategic financial accounting services.
         </p>
       </div>
 
@@ -23,10 +23,10 @@ export default function AboutPage() {
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-[#17365D]">Our Professional Background</h2>
             <p>
-              Singhania & Co. is registered with the Institute of Chartered Accountants of India (ICAI) under Firm Registration Number <strong>018472N</strong>. Over the past 26+ years, we have grown from a boutique tax advisory to an established practice catering to Indian private limited companies, multinational subsidiaries, LLPs, partnership firms, and high-net-worth individuals.
+              <strong>G. Dewangan & Associates</strong> is registered with the Institute of Chartered Accountants of India (ICAI) under Firm Registration Number <strong>018472C</strong>. We deliver robust, partner-led statutory compliance and tax planning solutions tailored for Indian private limited companies, LLPs, partnership firms, traders, and high-net-worth individuals.
             </p>
             <p>
-              Our firm is empanelled with the Comptroller & Auditor General of India (CAG) and the Reserve Bank of India (RBI) for statutory audits of financial institutions and public sector enterprises.
+              Our firm is dedicated to upholding the highest standards of professional competence, providing clients with clear, actionable statutory insights and proactive tax planning.
             </p>
           </section>
 
@@ -64,37 +64,39 @@ export default function AboutPage() {
           <section className="space-y-4 pt-4">
             <h2 className="text-xl font-bold text-[#17365D]">Leadership & Partners</h2>
             
+            {/* 1st Partner: CA Gajendra Dewangan */}
             <div className="bg-white border border-slate-200 rounded-xl p-6 space-y-3">
               <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-1">
                 <div>
-                  <h3 className="font-bold text-base text-[#17365D]">CA Vikramaditya Singhania</h3>
+                  <h3 className="font-bold text-base text-[#17365D]">CA Gajendra Dewangan</h3>
                   <p className="text-xs text-slate-500 font-medium">
-                    Managing Partner • B.Com (Hons), FCA, DISA (ICAI) • ICAI M.No: 084920
+                    Associated CA / Managing Partner • B.Com, FCA, DISA (ICAI) • ICAI M.No: 084920
                   </p>
                 </div>
                 <span className="text-[11px] bg-blue-50 text-[#2563EB] font-semibold px-2.5 py-1 rounded w-fit">
-                  26+ Years Experience
+                  10+ Years Experience
                 </span>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Specializes in Corporate Tax Planning, Cross-Border Structuring, Statutory Audits of listed entities, and Representation before the Income Tax Appellate Tribunal (ITAT). He is a certified Information System Auditor (DISA) and has advised over 500 corporate entities across technology, manufacturing, and healthcare sectors.
+                Specializes in Corporate Tax Planning, Direct Tax Scrutiny Representation, GST Compliance, Statutory Audits, and Financial Advisory. With over 10+ years of practicing experience, he has advised numerous corporate entities, MSMEs, industrial firms, and high-net-worth clients across Chhattisgarh and across India.
               </p>
             </div>
 
+            {/* 2nd Partner: CA Niraj Dewangan */}
             <div className="bg-white border border-slate-200 rounded-xl p-6 space-y-3">
               <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-1">
                 <div>
-                  <h3 className="font-bold text-base text-[#17365D]">CA Radhika Singhania</h3>
+                  <h3 className="font-bold text-base text-[#17365D]">CA Niraj Dewangan</h3>
                   <p className="text-xs text-slate-500 font-medium">
-                    Senior Partner • B.Com, FCA, Certificate in Indirect Taxes (ICAI) • ICAI M.No: 092415
+                    Co. CA / Partner • B.Com, ACA • Chartered Accountant
                   </p>
                 </div>
                 <span className="text-[11px] bg-blue-50 text-[#2563EB] font-semibold px-2.5 py-1 rounded w-fit">
-                  20+ Years Experience
+                  5+ Years Experience
                 </span>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Leads the Indirect Tax (GST/Customs) and Company Law compliance practice. She regularly lectures at regional ICAI study circles on GSTR-9/9C reconciliations, Section 17(5) blocked credits, and automated departmental scrutiny management.
+                Leads the Indirect Taxation (GST), ROC & MCA compliances, Accounting automation, and Internal Audit practice. With 5+ years of dedicated professional experience, he specializes in GSTR-9/9C annual reconciliations, input tax credit optimization, and startup compliance management.
               </p>
             </div>
           </section>
@@ -105,7 +107,7 @@ export default function AboutPage() {
           <div className="bg-[#17365D] text-white rounded-xl p-6 space-y-4">
             <h3 className="font-bold text-base">Book a Practice Consultation</h3>
             <p className="text-xs text-blue-200 leading-relaxed">
-              Meet directly with our partners at our Connaught Place office or arrange a virtual conference call.
+              Meet directly with our partners at our Bhilai office or arrange a virtual video conference call.
             </p>
             <Link
               href="/book-appointment"
@@ -122,23 +124,27 @@ export default function AboutPage() {
             <div className="space-y-2.5 text-xs text-slate-600">
               <div className="flex justify-between border-b border-slate-100 pb-1.5">
                 <span className="text-slate-500">ICAI Firm Reg. No:</span>
-                <span className="font-semibold text-slate-800">018472N</span>
+                <span className="font-semibold text-slate-800">018472C</span>
               </div>
               <div className="flex justify-between border-b border-slate-100 pb-1.5">
-                <span className="text-slate-500">Year Established:</span>
-                <span className="font-semibold text-slate-800">1998</span>
+                <span className="text-slate-500">Managing Partner:</span>
+                <span className="font-semibold text-slate-800">CA Gajendra Dewangan (10+ Yrs)</span>
+              </div>
+              <div className="flex justify-between border-b border-slate-100 pb-1.5">
+                <span className="text-slate-500">Co. Partner:</span>
+                <span className="font-semibold text-slate-800">CA Niraj Dewangan (5+ Yrs)</span>
               </div>
               <div className="flex justify-between border-b border-slate-100 pb-1.5">
                 <span className="text-slate-500">Head Office:</span>
-                <span className="font-semibold text-slate-800">New Delhi</span>
+                <span className="font-semibold text-slate-800">Bhilai, Chhattisgarh</span>
               </div>
               <div className="flex justify-between border-b border-slate-100 pb-1.5">
-                <span className="text-slate-500">Partners:</span>
-                <span className="font-semibold text-slate-800">4 FCAs</span>
+                <span className="text-slate-500">Phone:</span>
+                <span className="font-semibold text-slate-800">+91 78984 87448</span>
               </div>
               <div className="flex justify-between border-b border-slate-100 pb-1.5">
-                <span className="text-slate-500">Audit Staff:</span>
-                <span className="font-semibold text-slate-800">22 Professionals</span>
+                <span className="text-slate-500">Email:</span>
+                <span className="font-semibold text-slate-800">gajendradewangan@gmail.com</span>
               </div>
             </div>
           </div>

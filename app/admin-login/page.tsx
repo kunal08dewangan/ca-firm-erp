@@ -262,7 +262,7 @@ export default function AdminLoginPage() {
 
         <div className="text-center text-xs text-slate-500">
           <Link href="/" className="hover:underline flex items-center justify-center gap-1">
-            ← Return to Singhania & Co. Public Website
+            ← Return to G. Dewangan & Associates Public Website
           </Link>
         </div>
       </div>

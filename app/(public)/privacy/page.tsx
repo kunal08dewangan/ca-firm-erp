@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-2">
           <h2 className="text-sm font-bold text-[#17365D]">1. Professional Confidentiality Mandate</h2>
           <p>
-            As Chartered Accountants registered with the Institute of Chartered Accountants of India (ICAI), Singhania & Co. is bound by strict statutory duties of professional confidentiality under the Chartered Accountants Act, 1949 and the ICAI Code of Ethics. We do not disclose, sell, lease, or monetize client financial data, PAN numbers, bank statements, or tax computations to any third party under any circumstances.
+            As Chartered Accountants registered with the Institute of Chartered Accountants of India (ICAI), G. Dewangan & Associates is bound by strict statutory duties of professional confidentiality under the Chartered Accountants Act, 1949 and the ICAI Code of Ethics. We do not disclose, sell, lease, or monetize client financial data, PAN numbers, bank statements, or tax computations to any third party under any circumstances.
           </p>
         </section>
 
@@ -55,7 +55,7 @@ export default function PrivacyPolicyPage() {
           <p>
             For any queries regarding your data protection, please contact:
             <br />
-            <strong>Compliance Officer:</strong> Singhania & Co., 402, Corporate Heights, Barakhamba Road, Connaught Place, New Delhi 110001 • Email: privacy@cafirm.in
+            <strong>Compliance Officer:</strong> G. Dewangan & Associates, Bhilai, Durg, Chhattisgarh • Email: gajendradewangan@gmail.com
           </p>
         </section>
       </div>

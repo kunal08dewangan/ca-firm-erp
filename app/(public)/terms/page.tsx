@@ -11,7 +11,7 @@ export default function TermsPage() {
           Terms & Conditions of Professional Engagement
         </h1>
         <p className="text-xs text-slate-500">
-          Last Revised: November 2026 • Governing terms for engagement with Singhania & Co., Chartered Accountants.
+          Last Revised: November 2026 • Governing terms for engagement with G. Dewangan & Associates, Chartered Accountants.
         </p>
       </div>
 

@@ -119,7 +119,7 @@ export default function AdminSidebar({ mobileOpen, setMobileOpen }: SidebarProps
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-sm tracking-tight text-white">
-                SINGHANIA ERP
+                DEWANGAN ERP
               </span>
               <span className="text-[10px] text-blue-200 font-medium">
                 Practice Management

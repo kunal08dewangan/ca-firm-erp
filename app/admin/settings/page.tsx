@@ -123,7 +123,7 @@ export default function SettingsPage() {
           <div className="space-y-3 text-sm">
             <div>
               <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Practicing CA</span>
-              <p className="font-bold text-slate-900 text-base">{admin?.fullName || "CA Vikramaditya Singhania"}</p>
+              <p className="font-bold text-slate-900 text-base">{admin?.fullName || "CA Gajendra Dewangan"}</p>
             </div>
 
             <div className="grid grid-cols-2 gap-4">

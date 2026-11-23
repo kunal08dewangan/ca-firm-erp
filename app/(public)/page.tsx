@@ -156,7 +156,7 @@ export default function HomePage() {
               </h1>
 
               <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
-                Singhania & Co. delivers meticulous accounting, multi-jurisdiction GST compliance, and strategic tax planning for growing businesses, startups, and high-net-worth individuals across India.
+                G. Dewangan & Associates delivers meticulous accounting, multi-jurisdiction GST compliance, and strategic tax planning for growing businesses, startups, and high-net-worth individuals across India.
               </p>
 
               {/* Action Buttons */}
@@ -314,13 +314,13 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
               <span className="text-xs font-bold uppercase tracking-wider text-[#2563EB]">
-                About Singhania & Co.
+                About G. Dewangan & Associates
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#17365D]">
                 Excellence in Statutory Auditing & Indian Tax Jurisprudence
               </h2>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Established in 1998 in New Delhi, <strong>Singhania & Co.</strong> is a premier multi-disciplinary Chartered Accountancy firm registered with the Institute of Chartered Accountants of India (ICAI). Led by Senior Fellow Chartered Accountants (FCAs) and Information System Auditors (DISA), we provide comprehensive corporate compliance, statutory auditing, direct and indirect taxation, and transaction advisory services.
+                Headquartered in Bhilai, Chhattisgarh, <strong>G. Dewangan & Associates</strong> is a premier multi-disciplinary Chartered Accountancy firm registered with the Institute of Chartered Accountants of India (ICAI). Led by CA Gajendra Dewangan (10+ Years Experience) and CA Niraj Dewangan (5+ Years Experience), we provide comprehensive corporate compliance, statutory auditing, direct and indirect taxation, and transaction advisory services.
               </p>
               <p className="text-sm text-slate-600 leading-relaxed">
                 We believe that accounting is not merely a post-mortem historical record, but a proactive managerial tool for risk mitigation and strategic corporate growth. Every client engagement is managed directly by qualified CAs with rigorous quality reviews.
@@ -526,7 +526,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-xl border border-slate-200 space-y-3">
               <p className="text-xs text-slate-600 italic leading-relaxed">
-                "Singhania & Co. structured our overseas SaaS revenue model and resolved a complicated GST refund backlog worth ₹1.8 Cr within 60 days. Their deep understanding of IT industry taxation is peerless."
+                "G. Dewangan & Associates structured our tax compliance model and resolved complicated GST input credit issues within days. Their deep understanding of commercial taxation is peerless."
               </p>
               <div className="pt-2 border-t border-slate-100">
                 <p className="text-xs font-bold text-[#17365D]">Vikram Sharma</p>
@@ -536,7 +536,7 @@ export default function HomePage() {
 
             <div className="bg-white p-6 rounded-xl border border-slate-200 space-y-3">
               <p className="text-xs text-slate-600 italic leading-relaxed">
-                "Handling multi-state GST for 6 branches used to be a nightmare until we brought in Singhania & Co. Their double-entry accounting reconciliation caught ₹34 Lakhs of unclaimed GSTR-2B ITC."
+                "Handling statutory compliance and business accounts used to be a challenge until we engaged G. Dewangan & Associates. Their double-entry accounting reconciliation caught critical unclaimed GST ITC."
               </p>
               <div className="pt-2 border-t border-slate-100">
                 <p className="text-xs font-bold text-[#17365D]">Ananya Reddy</p>

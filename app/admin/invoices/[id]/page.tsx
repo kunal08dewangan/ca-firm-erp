@@ -67,18 +67,18 @@ export default async function InvoiceDetailPage({
               Tax Invoice
             </div>
             <h2 className="text-2xl font-bold text-[#17365D] tracking-tight">
-              VIKRAMADITYA &amp; ASSOCIATES
+              G. DEWANGAN &amp; ASSOCIATES
             </h2>
             <p className="text-xs font-semibold text-slate-600 uppercase tracking-wider">
               Chartered Accountants
             </p>
             <p className="text-xs text-slate-500 mt-1 max-w-sm">
-              Suite 402, Barakhamba Road, Connaught Place, New Delhi - 110001
+              Bhilai, Durg, Chhattisgarh - 490001
             </p>
             <div className="text-xs text-slate-600 mt-2 space-y-0.5 font-mono">
-              <p>ICAI Firm Reg. No: <strong>019482N</strong></p>
-              <p>Firm GSTIN: <strong>07AAACV9812K1Z9</strong></p>
-              <p>Firm PAN: <strong>AAACV9812K</strong></p>
+              <p>ICAI Firm Reg. No: <strong>018472C</strong></p>
+              <p>Firm Contact: <strong>+91 78984 87448</strong></p>
+              <p>Firm Email: <strong>gajendradewangan@gmail.com</strong></p>
             </div>
           </div>
 
@@ -177,11 +177,11 @@ export default async function InvoiceDetailPage({
             <p className="font-bold text-[#17365D] uppercase tracking-wider text-[11px]">
               Bank Details for Remittance:
             </p>
-            <p>Bank: <strong>HDFC Bank Ltd</strong></p>
-            <p>A/C Name: <strong>Vikramaditya &amp; Associates</strong></p>
-            <p className="font-mono">A/C No: <strong>50200019283741</strong> (Current)</p>
-            <p className="font-mono">IFSC Code: <strong>HDFC0000240</strong></p>
-            <p>Branch: Connaught Place, New Delhi</p>
+            <p>Bank: <strong>State Bank of India</strong></p>
+            <p>A/C Name: <strong>G. Dewangan &amp; Associates</strong></p>
+            <p className="font-mono">A/C No: <strong>3892019283741</strong> (Current)</p>
+            <p className="font-mono">IFSC Code: <strong>SBIN0000340</strong></p>
+            <p>Branch: Bhilai, Chhattisgarh</p>
           </div>
 
           <div className="space-y-2 text-xs">
@@ -262,13 +262,13 @@ export default async function InvoiceDetailPage({
         <div className="pt-8 flex justify-between items-end text-xs border-t border-slate-200">
           <div className="text-slate-400 text-[10px] space-y-1">
             <p>This is a computer-generated Tax Invoice under Rule 48 of CGST Rules, 2017.</p>
-            <p>Subject to Delhi Jurisdiction.</p>
+            <p>Subject to Chhattisgarh Jurisdiction.</p>
           </div>
 
           <div className="text-right space-y-1">
-            <p className="font-semibold text-[#17365D]">For VIKRAMADITYA &amp; ASSOCIATES</p>
+            <p className="font-semibold text-[#17365D]">For G. DEWANGAN &amp; ASSOCIATES</p>
             <p className="text-slate-500 italic pb-8">Chartered Accountants</p>
-            <p className="font-bold text-slate-800">CA Vikramaditya Singhania, FCA</p>
+            <p className="font-bold text-slate-800">CA Gajendra Dewangan, FCA</p>
             <p className="text-slate-500 font-mono">Partner | Membership No. 084920</p>
           </div>
         </div>

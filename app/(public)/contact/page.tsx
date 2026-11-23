@@ -45,10 +45,10 @@ export default function ContactPage() {
           Get In Touch
         </span>
         <h1 className="text-3xl font-extrabold text-[#17365D]">
-          Contact Singhania & Co., Chartered Accountants
+          Contact G. Dewangan & Associates, Chartered Accountants
         </h1>
         <p className="text-sm text-slate-600 max-w-3xl">
-          Visit our Connaught Place office or write to our partners for corporate tax, auditing, or GST consultation.
+          Visit our Bhilai office or write to our partners for corporate tax, auditing, or GST consultation.
         </p>
       </div>
 
@@ -61,9 +61,9 @@ export default function ContactPage() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#2563EB] shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-slate-800">Singhania & Co. (ICAI Reg. 018472N)</p>
-                  <p>402, Corporate Heights, Barakhamba Road</p>
-                  <p>Connaught Place, New Delhi 110001, India</p>
+                  <p className="font-semibold text-slate-800">G. Dewangan & Associates (ICAI Reg. 018472C)</p>
+                  <p>Bhilai, Durg</p>
+                  <p>Chhattisgarh, India</p>
                 </div>
               </div>
 
@@ -71,7 +71,7 @@ export default function ContactPage() {
                 <Phone className="w-5 h-5 text-[#2563EB] shrink-0" />
                 <div>
                   <p className="font-semibold text-slate-800">Phone & WhatsApp</p>
-                  <p>+91 98101 23456 / 011-43219876</p>
+                  <p>+91 78984 87448</p>
                 </div>
               </div>
 
@@ -79,7 +79,7 @@ export default function ContactPage() {
                 <Mail className="w-5 h-5 text-[#2563EB] shrink-0" />
                 <div>
                   <p className="font-semibold text-slate-800">Direct Email</p>
-                  <p>contact@cafirm.in / partners@cafirm.in</p>
+                  <p>gajendradewangan@gmail.com</p>
                 </div>
               </div>
 

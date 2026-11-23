@@ -32,7 +32,7 @@ export default function FaqPage() {
           a: "Late deduction attracts 1% interest per month, while late deposit attracts 1.5% interest per month under Section 201(1A). Furthermore, 30% of resident expenses (or 100% of non-resident payments) are disallowed as business expenses under Section 40(a)(ia).",
         },
         {
-          q: "How does Singhania & Co. represent clients during Faceless Scrutiny?",
+          q: "How does G. Dewangan & Associates represent clients during Faceless Scrutiny?",
           a: "All notices received on the e-filing portal are analyzed, quantitative reconciliation schedules prepared, legal precedents cited from ITAT and High Court decisions, and digital submissions signed by our Managing Partner.",
         },
       ],

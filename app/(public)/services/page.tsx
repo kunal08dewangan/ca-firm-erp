@@ -115,7 +115,7 @@ export default function ServicesPage() {
           Professional Accounting & Regulatory Services
         </h1>
         <p className="text-sm text-slate-600 max-w-3xl">
-          Singhania & Co. offers specialized, partner-supervised services covering the entire financial and statutory spectrum for Indian businesses and global corporations operating in India.
+          G. Dewangan & Associates offers specialized, partner-supervised services covering the entire financial and statutory spectrum for Indian businesses and professionals.
         </p>
       </div>
 
