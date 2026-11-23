@@ -47,7 +47,7 @@ export default function ServicesPage() {
       href: "/services/audit",
       icon: ShieldCheck,
       summary:
-        "Independent, rigorous audits in accordance with Standards on Auditing (SAs) issued by ICAI and statutory mandates under the Companies Act 2013 and Income Tax Act 1961.",
+        "Comprehensive, rigorous financial reviews and compliance audits in accordance with standard statutory mandates under the Companies Act and Income Tax Act.",
       features: [
         "Company Statutory Audits under Companies Act 2013",
         "Tax Audit under Section 44AB with Form 3CA/3CB and Form 3CD",
@@ -138,7 +138,7 @@ export default function ServicesPage() {
                       {item.title}
                     </h2>
                     <span className="text-[11px] text-[#2563EB] font-medium">
-                      ICAI Standards Compliant
+                      Statutory Compliant
                     </span>
                   </div>
                 </div>

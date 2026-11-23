@@ -248,13 +248,13 @@ export default function ClientProfilePage({ params }: { params: { id: string } }
 
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-lg space-y-2">
                 <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
-                  Assigned FCA In-Charge
+                  Assigned Consultant
                 </span>
                 <p className="text-xs font-bold text-[#17365D]">
-                  {client.assignedCA?.fullName || "CA Gajendra Dewangan"}
+                  {client.assignedCA?.fullName || "Gajendra Dewangan"}
                 </p>
                 <p className="text-[11px] text-slate-500">
-                  ICAI M.No: {client.assignedCA?.membershipNo || "084920"}
+                  Dewangan &amp; Associates
                 </p>
               </div>
             </div>
@@ -558,7 +558,7 @@ export default function ClientProfilePage({ params }: { params: { id: string } }
         {/* 10. HISTORY TAB */}
         {activeTab === "history" && (
           <div className="space-y-4">
-            <h3 className="font-bold text-sm text-[#17365D]">ICAI Audit Trail History</h3>
+            <h3 className="font-bold text-sm text-[#17365D]">Practice Audit Trail History</h3>
             <div className="space-y-2 text-xs">
               {historyLogs.map((h: any) => (
                 <div key={h.id} className="p-3 bg-slate-50 border border-slate-200 rounded">
@@ -567,7 +567,7 @@ export default function ClientProfilePage({ params }: { params: { id: string } }
                     <span className="text-[10px] text-slate-400">{formatDate(h.createdAt)}</span>
                   </div>
                   <p className="text-[11px] text-slate-500 mt-0.5">
-                    Triggered by: {h.admin?.fullName || "CA Admin"} • Module: {h.module}
+                    Triggered by: {h.admin?.fullName || "Admin"} • Module: {h.module}
                   </p>
                 </div>
               ))}

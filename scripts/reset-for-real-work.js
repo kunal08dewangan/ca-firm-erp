@@ -39,13 +39,12 @@ async function cleanAndInitProduction() {
   await prisma.auditLog.deleteMany();
   console.log("✓ All mock clients, transactions, invoices, and vouchers removed.");
 
-  // Read CA details from environment or use defaults
+  // Read details from environment or use defaults
   const realEmail = process.env.ADMIN_DEFAULT_EMAIL || "gajendradewangan@gmail.com";
   const realPassword = process.env.ADMIN_DEFAULT_PASSWORD || "AdminSecure@CA2026!";
-  const realFullName = process.env.NEXT_PUBLIC_LEAD_PARTNER || "CA Gajendra Dewangan";
-  const membershipNo = process.env.NEXT_PUBLIC_ICAI_MEMBERSHIP_NO || "084920";
+  const realFullName = process.env.NEXT_PUBLIC_LEAD_PARTNER || "Gajendra Dewangan";
 
-  console.log(`\n2. Creating your official CA Administrator account (${realEmail})...`);
+  console.log(`\n2. Creating your official Administrator account (${realEmail})...`);
   const passwordHash = await bcrypt.hash(realPassword, 12);
 
   // Delete any existing admin accounts and create the clean real admin
@@ -56,8 +55,8 @@ async function cleanAndInitProduction() {
       email: realEmail.trim().toLowerCase(),
       passwordHash: passwordHash,
       fullName: realFullName.trim(),
-      membershipNo: membershipNo.trim(),
-      role: "CHARTERED_ACCOUNTANT",
+      membershipNo: null,
+      role: "TAX_CONSULTANT",
       twoFactorEnabled: false,
     },
   });

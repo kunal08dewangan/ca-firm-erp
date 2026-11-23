@@ -11,15 +11,15 @@ export default function TermsPage() {
           Terms & Conditions of Professional Engagement
         </h1>
         <p className="text-xs text-slate-500">
-          Last Revised: November 2026 • Governing terms for engagement with G. Dewangan & Associates, Chartered Accountants.
+          Last Revised: November 2026 • Governing terms for engagement with Dewangan &amp; Associates, Tax &amp; Financial Consultants.
         </p>
       </div>
 
       <div className="bg-white border border-slate-200 rounded-xl p-8 space-y-6 text-xs text-slate-700 leading-relaxed shadow-sm">
         <section className="space-y-2">
-          <h2 className="text-sm font-bold text-[#17365D]">1. ICAI Non-Solicitation Disclaimer</h2>
+          <h2 className="text-sm font-bold text-[#17365D]">1. Professional Consultancy Disclaimer</h2>
           <p>
-            In accordance with the guidelines prescribed by the Institute of Chartered Accountants of India (ICAI) and the Chartered Accountants Act, 1949, this website and its portals do not constitute advertising, commercial solicitation, or invitation to secure professional engagements. The content provided is strictly for informative and educational purposes for existing and prospective clients who voluntarily seek professional consultation.
+            Dewangan &amp; Associates provides taxation, GST compliance, bookkeeping, and business financial advisory services. The information provided on this website and client portals is intended to facilitate professional consultation and statutory compliance. Client engagements are governed by mutual terms of engagement.
           </p>
         </section>
 

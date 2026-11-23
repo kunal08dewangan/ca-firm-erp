@@ -70,8 +70,8 @@ export default function HomePage() {
       href: "/services/income-tax",
     },
     {
-      title: "Statutory & Tax Audit (44AB)",
-      desc: "ICAI-compliant corporate statutory audits, Section 44AB tax audits, internal risk control reviews, and transfer pricing certifications.",
+      title: "Tax Audit & Compliance Support",
+      desc: "Comprehensive corporate compliance reviews, Section 44AB tax audit preparation, internal risk control reviews, and financial reconciliation.",
       icon: ShieldCheck,
       href: "/services/audit",
     },
@@ -96,9 +96,9 @@ export default function HomePage() {
   ];
 
   const experienceStats = [
-    { value: "26+", label: "Years of Practice", sub: "Founded in 1998" },
-    { value: "1,450+", label: "Active Retainer Clients", sub: "Corporates, LLPs & HNIs" },
-    { value: "100%", label: "ICAI Compliance Record", sub: "Zero-defect peer review" },
+    { value: "10+", label: "Years of Practice", sub: "Established Expertise" },
+    { value: "1,450+", label: "Clients Advised", sub: "Corporates, LLPs & Traders" },
+    { value: "100%", label: "Compliance Record", sub: "Timely statutory filings" },
     { value: "₹42 Cr+", label: "Legitimate Tax Saved", sub: "Through legal structuring" },
   ];
 
@@ -133,8 +133,8 @@ export default function HomePage() {
       a: "Under the latest Finance Acts, the New Tax Regime (Section 115BAC) offers lower slab rates and a ₹75,000 standard deduction. However, for individuals with substantial home loan interest (Section 24b) and Chapter VI-A deductions, the Old Regime may still yield greater savings. Our ERP computes both automatically to identify the exact optimal regime.",
     },
     {
-      q: "What is your procedure for handling statutory audit queries?",
-      a: "All audit observations, working papers, and management representations are documented with strict ledger voucher cross-referencing, ensuring full transparency and compliance with ICAI Standards on Auditing (SAs).",
+      q: "What is your procedure for handling statutory audit & compliance queries?",
+      a: "All financial reviews and compliance observations are documented with strict ledger voucher cross-referencing, ensuring full transparency and adherence to applicable financial standards.",
     },
   ];
 
@@ -148,11 +148,11 @@ export default function HomePage() {
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-[#17365D] text-xs font-semibold px-3 py-1.5 rounded-full">
                 <ShieldCheck className="w-4 h-4 text-secondary" />
-                <span>ICAI Registered Firm • 26 Years of Trust</span>
+                <span>Professional Tax &amp; Business Advisory • 10+ Years Experience</span>
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#17365D] tracking-tight leading-tight">
-                Corporate Tax Advisory, Statutory Audit & Financial Governance
+                Corporate Tax Advisory, GST Compliance &amp; Financial Governance
               </h1>
 
               <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
@@ -200,7 +200,7 @@ export default function HomePage() {
                 <div className="border-b border-slate-100 pb-4 mb-4">
                   <h3 className="font-bold text-base text-[#17365D]">Instant Professional Consultation</h3>
                   <p className="text-xs text-slate-500 mt-1">
-                    Connect directly with a Senior Chartered Accountant for compliance or tax planning.
+                    Connect directly with an experienced Tax &amp; Financial Consultant for compliance or tax planning.
                   </p>
                 </div>
 
@@ -294,12 +294,12 @@ export default function HomePage() {
                     ) : (
                       <>
                         <Send className="w-3.5 h-3.5" />
-                        Submit Request to CA
+                        Submit Request for Consultation
                       </>
                     )}
                   </button>
                   <p className="text-[10px] text-slate-400 text-center">
-                    Protected by client-attorney privilege and strict professional confidentiality.
+                    Protected by client confidentiality and secure data protocols.
                   </p>
                 </form>
               </div>
@@ -314,23 +314,23 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
               <span className="text-xs font-bold uppercase tracking-wider text-[#2563EB]">
-                About G. Dewangan & Associates
+                About Dewangan &amp; Associates
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#17365D]">
-                Excellence in Statutory Auditing & Indian Tax Jurisprudence
+                Excellence in Taxation, Accounting &amp; Business Advisory
               </h2>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Headquartered in Bhilai, Chhattisgarh, <strong>G. Dewangan & Associates</strong> is a premier multi-disciplinary Chartered Accountancy firm registered with the Institute of Chartered Accountants of India (ICAI). Led by CA Gajendra Dewangan (10+ Years Experience) and CA Niraj Dewangan (5+ Years Experience), we provide comprehensive corporate compliance, statutory auditing, direct and indirect taxation, and transaction advisory services.
+                Headquartered in Bhilai, Chhattisgarh, <strong>Dewangan &amp; Associates</strong> is a premier multi-disciplinary Tax, GST &amp; Accounting Consultancy firm. Led by Gajendra Dewangan (10+ Years Experience) and Niraj Dewangan (5+ Years Experience), we provide comprehensive corporate compliance, statutory filing support, direct and indirect taxation, and business financial advisory services.
               </p>
               <p className="text-sm text-slate-600 leading-relaxed">
-                We believe that accounting is not merely a post-mortem historical record, but a proactive managerial tool for risk mitigation and strategic corporate growth. Every client engagement is managed directly by qualified CAs with rigorous quality reviews.
+                We believe that accounting is not merely a post-mortem historical record, but a proactive managerial tool for risk mitigation and strategic corporate growth. Every client engagement is managed directly with rigorous quality reviews and personalized attention.
               </p>
               <div className="pt-2">
                 <Link
                   href="/about"
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#2563EB] hover:underline"
                 >
-                  Read Partner Profiles & Practice History
+                  Read Consultant Profiles &amp; Practice History
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -338,20 +338,20 @@ export default function HomePage() {
 
             <div className="lg:col-span-4 bg-[#F7F9FC] border border-slate-200 rounded-lg p-6 space-y-4">
               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700">
-                Key Credentials
+                Key Highlights
               </h4>
               <ul className="space-y-3 text-xs text-slate-600">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>ICAI Firm Registration:</strong> 018472N</span>
+                  <span><strong>Specialization:</strong> Direct Tax, GST &amp; Corporate Accounting</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>CAG & RBI Empanelled:</strong> Category-II Audit Firm</span>
+                  <span><strong>Location:</strong> Bhilai, Durg, Chhattisgarh</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>Peer Review Board:</strong> Certified clean rating</span>
+                  <span><strong>Experience:</strong> 10+ Years of Hands-on Practice</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />

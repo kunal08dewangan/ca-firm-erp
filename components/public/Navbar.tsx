@@ -52,7 +52,7 @@ export default function Navbar() {
             {FIRM_CONFIG.phone}
           </a>
           <span className="hidden md:inline-block text-blue-200 text-[11px]">
-            ICAI Reg No: {FIRM_CONFIG.icaiRegNo}
+            Taxation &amp; GST Compliance Services
           </span>
         </div>
         <div className="flex items-center gap-4">
@@ -71,14 +71,14 @@ export default function Navbar() {
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded bg-[#17365D] text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:bg-[#2563EB] transition-colors">
-            CA
+            DA
           </div>
           <div className="flex flex-col">
             <span className="font-bold text-base tracking-tight text-[#17365D] group-hover:text-[#2563EB] transition-colors">
               {FIRM_CONFIG.firmName}
             </span>
             <span className="text-[11px] font-medium text-slate-500 tracking-wider uppercase">
-              Chartered Accountants
+              Tax &amp; Financial Consultants
             </span>
           </div>
         </Link>

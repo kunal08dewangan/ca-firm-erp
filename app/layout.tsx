@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "G. Dewangan & Associates | Chartered Accountants",
+  title: "Dewangan & Associates | Tax, GST & Accounting Advisory",
   description:
-    "Premier Chartered Accountancy Firm offering Corporate Tax Advisory, GST Compliance, Statutory & Tax Audits, MCA Filings, and Virtual CFO Services.",
+    "Premier Tax & Accounting Consultancy offering Corporate Tax Advisory, GST Compliance, Bookkeeping, Financial Statements, ROC Filings, and Business Advisory.",
   keywords:
-    "Chartered Accountant, CA Firm Bhilai, GST Filing, Income Tax Return, ITR Filing, Statutory Audit, Tax Audit, Company Registration, Accounting Services",
+    "Tax Consultant, GST Filing, Income Tax Return, ITR Filing, Accounting Services, Bhilai, Chhattisgarh, Business Registration, TDS Compliance",
 };
 
 export default function RootLayout({

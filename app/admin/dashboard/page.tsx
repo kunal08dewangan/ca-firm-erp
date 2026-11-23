@@ -124,7 +124,7 @@ export default async function DashboardPage() {
             <span className="text-[#2563EB] font-semibold">Executive Dashboard</span>
           </div>
           <h1 className="text-2xl font-bold text-[#17365D]">
-            CA Practice Management Portal
+            Tax &amp; Accounting Practice Portal
           </h1>
           <p className="text-xs text-slate-500">
             Real-time compliance oversight, GST reconciliations, ITR computations, and accounting ledger.
@@ -204,7 +204,7 @@ export default async function DashboardPage() {
       {/* 3. Quick Action Bar */}
       <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
         <h2 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">
-          CA Quick Actions
+          Quick Practice Actions
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           {quickActions.map((action) => {

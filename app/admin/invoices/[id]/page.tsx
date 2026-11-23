@@ -67,16 +67,15 @@ export default async function InvoiceDetailPage({
               Tax Invoice
             </div>
             <h2 className="text-2xl font-bold text-[#17365D] tracking-tight">
-              G. DEWANGAN &amp; ASSOCIATES
+              DEWANGAN &amp; ASSOCIATES
             </h2>
             <p className="text-xs font-semibold text-slate-600 uppercase tracking-wider">
-              Chartered Accountants
+              Tax, GST &amp; Business Advisory
             </p>
             <p className="text-xs text-slate-500 mt-1 max-w-sm">
               Bhilai, Durg, Chhattisgarh - 490001
             </p>
             <div className="text-xs text-slate-600 mt-2 space-y-0.5 font-mono">
-              <p>ICAI Firm Reg. No: <strong>018472C</strong></p>
               <p>Firm Contact: <strong>+91 78984 87448</strong></p>
               <p>Firm Email: <strong>gajendradewangan@gmail.com</strong></p>
             </div>
@@ -266,10 +265,10 @@ export default async function InvoiceDetailPage({
           </div>
 
           <div className="text-right space-y-1">
-            <p className="font-semibold text-[#17365D]">For G. DEWANGAN &amp; ASSOCIATES</p>
-            <p className="text-slate-500 italic pb-8">Chartered Accountants</p>
-            <p className="font-bold text-slate-800">CA Gajendra Dewangan, FCA</p>
-            <p className="text-slate-500 font-mono">Partner | Membership No. 084920</p>
+            <p className="font-semibold text-[#17365D]">For DEWANGAN &amp; ASSOCIATES</p>
+            <p className="text-slate-500 italic pb-8">Tax &amp; Business Consultants</p>
+            <p className="font-bold text-slate-800">Gajendra Dewangan</p>
+            <p className="text-slate-500 font-mono">Principal Consultant | Authorized Signatory</p>
           </div>
         </div>
       </div>

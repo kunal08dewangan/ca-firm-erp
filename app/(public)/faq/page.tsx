@@ -95,13 +95,13 @@ export default function FaqPage() {
       <div className="bg-[#F7F9FC] border border-slate-200 rounded-xl p-6 text-center space-y-3">
         <h3 className="font-bold text-[#17365D] text-sm">Have a unique tax or structural query?</h3>
         <p className="text-xs text-slate-600">
-          Our Chartered Accountants provide specialized written tax opinions and structuring advice.
+          Our Senior Tax Consultants provide specialized written tax opinions and advisory.
         </p>
         <Link
           href="/contact"
           className="inline-block bg-[#17365D] hover:bg-[#2563EB] text-white text-xs font-semibold px-5 py-2.5 rounded transition-colors"
         >
-          Submit Query to Partner
+          Submit Query for Consultation
         </Link>
       </div>
     </div>

@@ -96,14 +96,14 @@ export default function AdminTopNav({ setMobileOpen, admin }: TopNavProps) {
             className="flex items-center gap-2.5 p-1.5 rounded-lg hover:bg-slate-100 transition-colors"
           >
             <div className="w-8 h-8 rounded-full bg-[#17365D] text-white flex items-center justify-center font-bold text-xs">
-              CA
+              DA
             </div>
             <div className="hidden sm:flex flex-col text-left">
               <span className="text-xs font-bold text-slate-800 leading-tight">
-                {admin.fullName || "Chartered Accountant"}
+                {admin.fullName || "Gajendra Dewangan"}
               </span>
               <span className="text-[10px] text-slate-500">
-                ICAI M.No: {admin.membershipNo || "084920"}
+                Dewangan &amp; Associates
               </span>
             </div>
           </button>
@@ -116,7 +116,7 @@ export default function AdminTopNav({ setMobileOpen, admin }: TopNavProps) {
                 <p className="text-slate-500 text-[11px]">{admin.email}</p>
                 <div className="flex items-center gap-1 mt-1 text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded w-fit">
                   <ShieldCheck className="w-3 h-3 text-emerald-600" />
-                  <span>Verified FCA Admin</span>
+                  <span>Authorized Administrator</span>
                 </div>
               </div>
 

@@ -14,7 +14,7 @@ export default function AuditServicesPage() {
           Statutory Audit, Tax Audit (44AB) & Risk Assurance
         </h1>
         <p className="text-sm text-slate-600 max-w-3xl">
-          Independent, thorough examination of financial statements adhering strictly to ICAI Standards on Auditing and statutory compliance mandates.
+          Independent, thorough examination of financial statements adhering strictly to financial reporting standards and statutory compliance mandates.
         </p>
       </div>
 

@@ -115,7 +115,7 @@ export default function AdminSidebar({ mobileOpen, setMobileOpen }: SidebarProps
         <div className="h-16 flex items-center justify-between px-5 border-b border-white/10 shrink-0">
           <Link href="/admin/dashboard" className="flex items-center gap-3">
             <div className="w-8 h-8 rounded bg-[#2563EB] text-white flex items-center justify-center font-bold text-sm">
-              CA
+              DA
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-sm tracking-tight text-white">

@@ -440,7 +440,7 @@ export default function TaxComputationPage() {
 
               <div className="pt-2 text-[11px] text-slate-500">
                 <p>
-                  * Calculation prepared under provisions of the Income Tax Act, 1961 as amended by Finance Acts. Verified by Chartered Accountant.
+                  * Calculation prepared under provisions of the Income Tax Act, 1961 as amended by Finance Acts. Verified by Tax Consultant.
                 </p>
               </div>
             </div>

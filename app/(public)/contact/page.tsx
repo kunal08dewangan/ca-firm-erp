@@ -45,10 +45,10 @@ export default function ContactPage() {
           Get In Touch
         </span>
         <h1 className="text-3xl font-extrabold text-[#17365D]">
-          Contact G. Dewangan & Associates, Chartered Accountants
+          Contact Dewangan &amp; Associates, Tax &amp; Financial Consultants
         </h1>
         <p className="text-sm text-slate-600 max-w-3xl">
-          Visit our Bhilai office or write to our partners for corporate tax, auditing, or GST consultation.
+          Visit our Bhilai office or write to our consultants for corporate tax, accounting, or GST consultation.
         </p>
       </div>
 
@@ -61,7 +61,7 @@ export default function ContactPage() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#2563EB] shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-slate-800">G. Dewangan & Associates (ICAI Reg. 018472C)</p>
+                  <p className="font-semibold text-slate-800">Dewangan &amp; Associates</p>
                   <p>Bhilai, Durg</p>
                   <p>Chhattisgarh, India</p>
                 </div>

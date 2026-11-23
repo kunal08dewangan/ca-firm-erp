@@ -80,7 +80,7 @@ export default function SettingsPage() {
       <div className="pb-2 border-b border-slate-200">
         <h1 className="text-2xl font-bold text-[#17365D]">System Security &amp; Firm Settings</h1>
         <p className="text-sm text-slate-500 mt-1">
-          ICAI practice credentials, cryptographic session configuration, and tamper-evident audit logs.
+          Firm practice credentials, cryptographic session configuration, and tamper-evident audit logs.
         </p>
       </div>
 
@@ -108,32 +108,32 @@ export default function SettingsPage() {
 
       {/* Top Grid: Admin Credentials + Security Safeguards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* CA Administrator Profile */}
+        {/* Administrator Profile */}
         <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
           <div className="flex items-center justify-between border-b border-slate-100 pb-3">
             <div className="flex items-center gap-2">
               <User className="w-5 h-5 text-[#17365D]" />
-              <h2 className="text-base font-bold text-[#17365D]">Chartered Accountant Profile</h2>
+              <h2 className="text-base font-bold text-[#17365D]">Practice Lead Profile</h2>
             </div>
             <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
-              ICAI Fellow (FCA)
+              Principal Advisor
             </span>
           </div>
 
           <div className="space-y-3 text-sm">
             <div>
-              <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Practicing CA</span>
-              <p className="font-bold text-slate-900 text-base">{admin?.fullName || "CA Gajendra Dewangan"}</p>
+              <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Practice Lead</span>
+              <p className="font-bold text-slate-900 text-base">{admin?.fullName || "Gajendra Dewangan"}</p>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider">ICAI M.No</span>
-                <p className="font-mono font-bold text-slate-800">{admin?.membershipNo || "084920"}</p>
+                <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Firm</span>
+                <p className="font-bold text-slate-800">Dewangan &amp; Associates</p>
               </div>
               <div>
-                <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Firm Reg. No</span>
-                <p className="font-mono font-bold text-slate-800">019482N</p>
+                <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Location</span>
+                <p className="font-bold text-slate-800">Bhilai, Chhattisgarh</p>
               </div>
             </div>
 

@@ -237,13 +237,13 @@ export default function AdminLoginPage() {
         {/* Brand Card Header */}
         <div className="text-center space-y-2">
           <div className="w-12 h-12 bg-[#17365D] rounded-xl text-white font-bold text-xl flex items-center justify-center mx-auto shadow-sm">
-            CA
+            DA
           </div>
           <h1 className="text-2xl font-extrabold text-[#17365D] tracking-tight">
-            Chartered Accountant ERP Portal
+            Tax &amp; Practice Management Portal
           </h1>
           <p className="text-xs text-slate-500 font-medium">
-            Secure, Restricted Access for Authorized CA Administrators & Staff
+            Secure, Restricted Access for Authorized Administrators &amp; Staff
           </p>
         </div>
 
@@ -251,7 +251,7 @@ export default function AdminLoginPage() {
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-[11px] text-blue-900 flex items-start gap-2">
           <Lock className="w-4 h-4 text-[#2563EB] shrink-0 mt-0.5" />
           <span>
-            <strong>ICAI IT Security Protocol:</strong> All login sessions are monitored, rate-limited, and recorded in immutable audit logs.
+            <strong>Security Protocol:</strong> All login sessions are monitored, rate-limited, and recorded in immutable audit logs.
           </span>
         </div>
 
@@ -262,7 +262,7 @@ export default function AdminLoginPage() {
 
         <div className="text-center text-xs text-slate-500">
           <Link href="/" className="hover:underline flex items-center justify-center gap-1">
-            ← Return to G. Dewangan & Associates Public Website
+            ← Return to Dewangan &amp; Associates Public Website
           </Link>
         </div>
       </div>

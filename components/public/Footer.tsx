@@ -12,19 +12,19 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded bg-[#2563EB] text-white flex items-center justify-center font-bold text-lg">
-                CA
+                DA
               </div>
               <div>
                 <h3 className="font-bold text-white text-base tracking-tight">{FIRM_CONFIG.firmName}</h3>
-                <p className="text-xs text-blue-200">Chartered Accountants</p>
+                <p className="text-xs text-blue-200">Tax &amp; Financial Consultants</p>
               </div>
             </div>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Peer-reviewed Chartered Accountancy firm delivering corporate taxation, comprehensive GST compliance, statutory audit, and strategic financial advisory.
+              Professional Tax &amp; Accounting Consultancy delivering corporate taxation, comprehensive GST compliance, bookkeeping, and business advisory.
             </p>
             <div className="flex items-center gap-2 text-xs text-blue-200 pt-1">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>ICAI Firm Reg. No: {FIRM_CONFIG.icaiRegNo}</span>
+              <span>Tax &amp; Compliance Advisory</span>
             </div>
           </div>
 
@@ -140,11 +140,11 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Regulatory ICAI Disclaimer & Copyright Strip */}
+      {/* Regulatory Disclaimer & Copyright Strip */}
       <div className="bg-[#0F243E] border-t border-slate-800 text-slate-400 text-[11px] py-4 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
           <p className="leading-relaxed">
-            <strong>Regulatory Disclaimer:</strong> As per the rules framed by the Institute of Chartered Accountants of India (ICAI), Chartered Accountants are not permitted to solicit work or advertise. This website is meant solely for informational purposes and to facilitate professional engagement with existing and prospective clients.
+            <strong>Disclaimer:</strong> Professional Tax, GST, and Accounting Consultancy services provided for businesses, traders, professionals, and individuals. All statutory filings and compliances are handled in accordance with prevailing Indian tax laws.
           </p>
           <p className="shrink-0">
             © {new Date().getFullYear()} {FIRM_CONFIG.firmName}. All rights reserved.
